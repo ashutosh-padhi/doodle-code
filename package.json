@@ -6,9 +6,14 @@
   "dependencies": {
     "codemirror": "^5.25.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "browserify": "^14.3.0",
+    "copyfiles": "^1.2.0",
+    "rimraf": "^2.6.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist && copyfiles -f src/index.html node_modules/codemirror/lib/codemirror.css dist && browserify src/main.js > dist/bundle.js"
   },
   "author": "Ashutosh Padhi",
   "license": "ISC"

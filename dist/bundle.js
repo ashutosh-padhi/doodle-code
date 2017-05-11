@@ -1,24 +1,4 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-require("codemirror/mode/htmlmixed/htmlmixed");
-var CodeMirror = require('codemirror')
-codemirror = CodeMirror.fromTextArea(document.getElementById("editor"), {
-  lineNumbers: true,
-  mode: "htmlmixed"
-});
-window.onload = function(){
-  var iframe = document.getElementById("iframe"),
-      iframeDocument = iframe.contentWindow.document,
-      html = document.getElementById("editor"),
-      run = function(){
-        var htmlContent = html.textContent;
-        //el.innerHTML = htmlContent;
-        iframe.contentWindow.document.write(codemirror.getValue());
-        iframe.contentWindow.document.close();
-        //iframeDocument.body.innerHTML = htmlContent;
-      };
-  document.getElementById("run").onclick = run;
-}
-},{"codemirror":2,"codemirror/mode/htmlmixed/htmlmixed":4}],2:[function(require,module,exports){
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
 // Distributed under an MIT license: http://codemirror.net/LICENSE
 
@@ -9352,7 +9332,7 @@ return CodeMirror$1;
 
 })));
 
-},{}],3:[function(require,module,exports){
+},{}],2:[function(require,module,exports){
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
 // Distributed under an MIT license: http://codemirror.net/LICENSE
 
@@ -10185,7 +10165,7 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
 
 });
 
-},{"../../lib/codemirror":2}],4:[function(require,module,exports){
+},{"../../lib/codemirror":1}],3:[function(require,module,exports){
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
 // Distributed under an MIT license: http://codemirror.net/LICENSE
 
@@ -10339,7 +10319,7 @@ CodeMirror.defineMode("css", function(config, parserConfig) {
   CodeMirror.defineMIME("text/html", "htmlmixed");
 });
 
-},{"../../lib/codemirror":2,"../css/css":3,"../javascript/javascript":5,"../xml/xml":6}],5:[function(require,module,exports){
+},{"../../lib/codemirror":1,"../css/css":2,"../javascript/javascript":4,"../xml/xml":5}],4:[function(require,module,exports){
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
 // Distributed under an MIT license: http://codemirror.net/LICENSE
 
@@ -11146,7 +11126,7 @@ CodeMirror.defineMIME("application/typescript", { name: "javascript", typescript
 
 });
 
-},{"../../lib/codemirror":2}],6:[function(require,module,exports){
+},{"../../lib/codemirror":1}],5:[function(require,module,exports){
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
 // Distributed under an MIT license: http://codemirror.net/LICENSE
 
@@ -11542,4 +11522,22 @@ if (!CodeMirror.mimeModes.hasOwnProperty("text/html"))
 
 });
 
-},{"../../lib/codemirror":2}]},{},[1]);
+},{"../../lib/codemirror":1}],6:[function(require,module,exports){
+require("codemirror/mode/htmlmixed/htmlmixed");
+var CodeMirror = require('codemirror')
+codemirror = CodeMirror.fromTextArea(document.getElementById("editor"), {
+  lineNumbers: true,
+  mode: "htmlmixed"
+});
+window.onload = function(){
+  var iframe = document.getElementById("iframe"),
+      iframeDocument = iframe.contentWindow.document,
+      html = document.getElementById("editor"),
+      run = function(){
+        var htmlContent = html.textContent;
+        iframe.contentWindow.document.write(codemirror.getValue());
+        iframe.contentWindow.document.close();
+      };
+  document.getElementById("run").onclick = run;
+}
+},{"codemirror":1,"codemirror/mode/htmlmixed/htmlmixed":3}]},{},[6]);
