@@ -1,15 +1,11 @@
 # doodle-code
 
-1. Clone this repository
-2. do `npm install`
-3. update the `node_modules/codemirror/lib/codemirror.css` as below
+## Running the app
+It is prebuilt app. To run the app open the `dist/index.html` file.
+
+## Building the app
 ```
-.CodeMirror {
-  /* Set height, width, borders, and global font properties here */
-  font-family: monospace;
-  height: 100%;
-  color: black;
-  font-size: 14px;
-  }
+npm install
+npm run build
 ```
-4. open the index.html in the browser.
+Building will replace the `dist/codemirror.css` with the factory version. This css can be found in `node_modules/codemirror/lib/codemirror.css`. You need to change it as per your requirement to reflect in `dist`.
