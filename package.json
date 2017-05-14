@@ -13,7 +13,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf dist && copyfiles -f src/index.html node_modules/codemirror/lib/codemirror.css dist && browserify src/main.js > dist/bundle.js"
+    "build": "rimraf dist && copyfiles -f src/index.html src/style.css node_modules/codemirror/lib/codemirror.css dist && browserify src/main.js > dist/bundle.js"
   },
   "author": "Ashutosh Padhi",
   "license": "ISC"
